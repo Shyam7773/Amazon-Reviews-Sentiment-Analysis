@@ -1,0 +1,32 @@
+name: CI                # workflow name
+on:                     
+  push:                 
+    branches: [ main ]
+  pull_request:         
+    branches: [ main ]
+
+jobs:
+  build:                # one job called "build"
+    runs-on: ubuntu-latest   # environment
+
+    steps:              # tasks to execute
+      - name: Checkout code
+        uses: actions/checkout@v4   # downloads the repo into the runner
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"    # same as the project
+
+      - name: Install dependencies
+        run: |
+          pip install --upgrade pip
+          pip install -r requirements.txt
+          pip install pytest
+
+      - name: Train model (small slice)
+        run: |
+          python training/train_tfidf_logreg.py --n-train 2000 --n-test 500
+
+      - name: Run tests
+        run: pytest -q
