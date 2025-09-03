@@ -1,0 +1,19 @@
+# python
+__pycache__/
+*.pyc
+.venv/
+
+# models (ignore big files but keep config + version)
+models/*.joblib
+models/*.pkl
+!models/config.json
+!models/model_version.txt
+
+# data cache
+.cache/
+datasets/
+
+# OS/IDE junk
+.DS_Store
+.vscode/
+.idea/
