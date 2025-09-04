@@ -29,4 +29,7 @@ jobs:
           python training/train_tfidf_logreg.py --n-train 2000 --n-test 500
 
       - name: Run tests
+        env:
+          PYTHONPATH: ${{ github.workspace }}
         run: pytest -q
+
