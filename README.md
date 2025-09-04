@@ -18,6 +18,7 @@ It’s not perfect, but it shows the full cycle: training, saving models, servin
 ---
 
 ## 📂 Project Structure
+```bash
 amazon-sentiment-mlops/
 ├── training/ # training script
 │ └── train_tfidf_logreg.py
@@ -39,9 +40,8 @@ amazon-sentiment-mlops/
 ├── Dockerfile
 ├── requirements.txt
 └── README.md
+```
 
-
----
 
 ## 🏋️ Training
 Dataset: [Amazon Polarity dataset](https://huggingface.co/datasets/amazon_polarity)  
