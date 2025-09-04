@@ -96,7 +96,7 @@ docker build -t reviews-api .
 docker run -p 8000:8000 reviews-api
 ```
 
-##CI (Continuous Integration)
+## CI (Continuous Integration)
 
 Workflow: ci.yml
 
