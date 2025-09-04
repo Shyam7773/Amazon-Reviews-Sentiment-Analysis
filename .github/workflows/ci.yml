@@ -18,7 +18,7 @@ jobs:
         with:
           python-version: "3.11"    # same as the project
           
-        - name: Install dependencies
+      - name: Install dependencies
         run: |
           pip install --upgrade pip
           pip install -r requirements.txt
