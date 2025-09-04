@@ -53,7 +53,7 @@ python training/train_tfidf_logreg.py --n-train 20000 --n-test 5000
 ```
 Artifacts and metrics are saved to models/ and metrics.json.
 
-##🚀 Serving the API
+## 🚀 Serving the API
 ```bash
 uvicorn serving.app:app --reload --port 8000
 ```
@@ -84,7 +84,7 @@ Health panel to check model status
 
 
 
-##🐳 Docker
+## 🐳 Docker
 
 Build and run:
 ```bash
@@ -106,7 +106,7 @@ Runs tests in tests/
 
 Badge at the top shows the status!
 
-##Future Work
+## Future Work
 
 Try transformer models (DistilBERT, etc.)
 
@@ -116,7 +116,7 @@ Add MLflow or experiment tracking
 
 Improve GUI with charts
 
-##About Me
+## About Me
 
 I’m a student learning Data Science & MLOps.
 This repo is my way of practicing the full ML pipeline and showing what I can do.
