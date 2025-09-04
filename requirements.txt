@@ -1,1 +1,8 @@
-fastapiuvicorn[standard]scikit-learnjoblibdatasetsnumpypytest
+fastapi
+uvicorn[standard]
+httpx
+scikit-learn
+joblib
+datasets
+numpy
+pytest
