@@ -24,12 +24,6 @@ jobs:
           pip install -r requirements.txt
           pip install pytest httpx
 
-      - name: Install dependencies
-        run: |
-          pip install --upgrade pip
-          pip install -r requirements.txt
-          pip install pytest
-
       - name: Train model (small slice)
         run: |
           python training/train_tfidf_logreg.py --n-train 2000 --n-test 500
