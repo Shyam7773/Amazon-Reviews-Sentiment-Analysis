@@ -1,6 +1,6 @@
 # 📦 Amazon Reviews Sentiment (MLOps Student Project)
 
-![CI](https://github.com/Shyam7773/amazon-sentiment-mlops/actions/workflows/ci.yml/badge.svg)
+![CI](https://github.com/Shyam7773/Amazon-Reviews-Sentiment-Analysis/actions/workflows/ci.yml/badge.svg?branch=main)
 
 This repository demonstrates an **end-to-end Machine Learning workflow** built around sentiment analysis on Amazon reviews.  
 It was created as a **student project** to practice **MLOps concepts**: training, saving artifacts, serving predictions with an API, building a simple frontend, containerizing with Docker, and setting up CI with GitHub Actions.
