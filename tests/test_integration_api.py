@@ -1,17 +1,19 @@
 # tests/test_integration_api.py
-# quick integration check
+from fastapi.testclient import TestClient
+from serving.app import app
 
-import subprocess, sys, time, json, urllib.request
+client = TestClient(app)
 
 def test_health_endpoint():
-    # start the server
-    proc = subprocess.Popen([sys.executable, "-m", "uvicorn", "serving.app:app", "--port", "8001"])
-    try:
-        time.sleep(1.2)  # give it a sec to boot
-        with urllib.request.urlopen("http://127.0.0.1:8001/health", timeout=3) as r:
-            body = r.read().decode()
-            data = json.loads(body)
-            assert data.get("status") == "ok"
-            assert "model" in data
-    finally:
-        proc.terminate()
+    r = client.get("/health")
+    assert r.status_code == 200
+    data = r.json()
+    assert data["status"] == "ok"
+    assert "model" in data
+    assert "version" in data
+
+def test_predict_endpoint():
+    r = client.post("/predict", json={"text": "This is fantastic!"})
+    assert r.status_code == 200
+    data = r.json()
+    assert data["prediction"] in ["positive", "negative"]
