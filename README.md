@@ -1,46 +1,50 @@
-# 📦 Amazon Reviews Sentiment (Student Project)
+# 📦 Amazon Reviews Sentiment (MLOps Student Project)
 
 ![CI](https://github.com/Shyam7773/amazon-sentiment-mlops/actions/workflows/ci.yml/badge.svg)
 
-Hi! 👋 This is my student project where I built a **sentiment analysis system** on Amazon reviews and wrapped it in a simple **MLOps pipeline**.  
-It’s not perfect, but it shows the full cycle: training, saving models, serving with FastAPI, adding a small web UI, containerizing with Docker, and testing with CI.
+This repository demonstrates an **end-to-end Machine Learning workflow** built around sentiment analysis on Amazon reviews.  
+It was created as a **student project** to practice **MLOps concepts**: training, saving artifacts, serving predictions with an API, building a simple frontend, containerizing with Docker, and setting up CI with GitHub Actions.
 
 ---
 
-## ✨ Features
-- Train a text classifier (TF-IDF + Logistic Regression)
-- Save model artifacts (`joblib`)
-- Serve predictions with **FastAPI**
-- Dark-themed mini web UI (HTML/CSS/JS)
-- Containerize with **Docker**
-- CI with GitHub Actions (runs training + tests on each push)
+## ✨ Highlights
+- **Model Training**: TF-IDF + Logistic Regression on the Amazon Polarity dataset  
+- **Artifact Handling**: Save vectorizer & classifier with joblib  
+- **Serving**: Predictions via FastAPI (`/predict` and `/health`)  
+- **Frontend**: Minimal dark-themed GUI (HTML/CSS/JS)  
+- **Containerization**: Dockerfile to run the app anywhere  
+- **Testing**: Pytest suite for artifacts & endpoints  
+- **CI Pipeline**: GitHub Actions to train on a small slice & run tests automatically  
 
 ---
 
 ## 📂 Project Structure
-```bash
+
+```text
 amazon-sentiment-mlops/
-├── training/ # training script
-│ └── train_tfidf_logreg.py
-├── serving/ # FastAPI app + GUI
-│ ├── app.py
-│ └── static/
-│ ├── styles.css
-│ └── app.js
-├── models/ # trained artifacts
-│ ├── vectorizer.joblib
-│ ├── clf.joblib
-│ ├── config.json
-│ └── model_version.txt
-├── tests/ # pytest tests
-│ ├── test_artifacts.py
-│ ├── test_predict.py
-│ └── test_integration.py
-├── .github/workflows/ci.yml # CI pipeline
+├── training/             # Training script
+│   └── train_tfidf_logreg.py
+├── serving/              # FastAPI app + GUI
+│   ├── app.py
+│   └── static/
+│       ├── styles.css
+│       └── app.js
+├── models/               # Saved model artifacts
+│   ├── vectorizer.joblib
+│   ├── clf.joblib
+│   ├── config.json
+│   └── model_version.txt
+├── tests/                # Pytest test files
+│   ├── test_artifacts.py
+│   ├── test_predict.py
+│   └── test_integration.py
+├── .github/workflows/    # CI workflow
+│   └── ci.yml
 ├── Dockerfile
 ├── requirements.txt
+├── metrics.json          # Sample metrics from training
 └── README.md
-```
+
 
 
 ## 🏋️ Training
